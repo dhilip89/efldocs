@@ -41,6 +41,9 @@ More on those in the following sections.
 
 ##### Format Items
 
+![example1](https://eflisrael.github.io/efldocs/textblock/data/diagrams/svg/tb-items-paragraphs-example.svg)
+(1) This is true if legacy newline support is turned off. Otherwise, a newline item creates a new paragraph.
+
 ### Bidi Properties
 
 ## Usages
