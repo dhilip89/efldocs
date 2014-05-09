@@ -49,5 +49,18 @@ More on those in the following sections.
 ## Usages
 
 ## Edje Entry
+Basically, [Edje Entry](http://docs.enlightenment.org/auto/edje/group__Edje__Text__Entry.html) is based in evas textblcok. It is supports many visual features for text input entry, which are not supported by evas textblock.
+- Text edit cursor
+- Cursor Handler
+- Selection
+- Selection Handler
+- Key event processing
+- Simple usage of item format, anchor format
+- Ecore IMF(Input Method Framework) supporting - Virtual Keyboard
+
+<br>
+EFL developers can makes their own styles for entry using EDC, including Evas Textblock style, visual style, cursor, handler and so on.<br>
+But, usually, Edje Entry is not used independently. It works as a part of Elementary Entry.
+
 
 ## Elementary Entry (Widget)
