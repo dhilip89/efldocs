@@ -18,8 +18,21 @@ EFL's Evas Textblock object offers many features, which are highly popular in mo
 
 Moreover, the Evas Textblock object has been extended to [Edje Entry](http://docs.enlightenment.org/auto/edje/group__Edje__Text__Entry.html) and [Elementary Entry](http://docs.enlightenment.org/auto/elementary/group__Entry.html) to offer even more features.
 Bidirectional text is under development and is aimed to comply with current Unicode standards.
-
 More on those in the following sections.
+
+### Markup
+Setting a text in Textblock is performed by using the evas_object_textblock_text_markup_set/prepend methods.
+The textblock object introduces a light [markup language](http://en.wikipedia.org/wiki/Markup_language) for using the special text formatting it offers. For example, the following markup:
+```c
+<font_weight=bold>Hello</font_weight> World
+```
+will produce a |<b>Hello</b> World| text.
+There are many more formatting options that Textblock offers.
+
+### Formatting
+Formatting can be achieved by either using the formatting functions, or by adding formatting tags when setting the markup text. Tags add convenience and are converted to the proper formatting property. Thus, instead of ```<font_weight=bold>Hello</font_weight> World``` we can just use ```<b>Hello</b> World```. The ```<b>``` and the ```<i>``` are default tags that are embedded in Textblock. Different tags can be supported by setting a style to the Textblock object using the ```evas_object_textblock_style_set``` method.
+
+For all formattings that textblock offers, please consult the [Textblock Style Page](http://docs.enlightenment.org/auto/efl/evas_textblock_style_page.html).
 
 ## (Optional) Unicode
 
