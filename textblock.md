@@ -6,7 +6,7 @@ This document serves as a complement to the existing [Textblock Documentation an
 The Textblock object is an extensive tool for handling complex texts, such as ones that have multiple styles and multilined. More complex features offer text alignement, wrapping and item embedding e.g. icons.
 Currently, this is the favorable way of handling text in EFL, and demand for more a comprehensive explanation had led to the forming of this document.
 
-## The Textblock Object
+### The Textblock Object
 EFL's Evas Textblock object offers many features, which are highly popular in most text applications nowadays. Currently, it supports the following:
 - Multilines
 - Wrapping (word/char/mixed) and ellipsis
@@ -34,8 +34,6 @@ Formatting can be achieved by either using the formatting functions, or by addin
 
 For all formattings that textblock offers, please consult the [Textblock Style Page](http://docs.enlightenment.org/auto/efl/evas_textblock_style_page.html).
 
-## (Optional) Unicode
-
 ## Textblock Logic
 When a text is set to Textblock, Textblock will save the text data. But, Textblock can't show directly the raw text. For handling complex texts, Textblock will makes logical and visual datas with the text and Textblock style.
 
@@ -46,27 +44,24 @@ Text Item will be added when some text has different visual properties. In other
 
 These Items will be appended to a Line. And Lines makes a Paragraph.
 
+### Nodes
 
-## Evas Textblock
+#### Text Nodes
 
-### Brief Breakdown
+#### Format Nodes
 
-#### (Optional) Nodes
-
-##### Text Nodes
-
-##### Format Nodes
-
-#### Items
-
-##### Text Items
-
-##### Format Items
+### Items
 
 ![example1](https://eflisrael.github.io/efldocs/textblock/data/diagrams/svg/tb-items-paragraphs-example.svg)
 (1) This is true if legacy newline support is turned off. Otherwise, a newline item creates a new paragraph.
 
-### Bidi Properties
+#### Text Items
+
+##### Format Items
+
+## Unicode
+
+## Bidi Properties
 
 ## Usages
 
@@ -83,6 +78,5 @@ Basically, [Edje Entry](http://docs.enlightenment.org/auto/edje/group__Edje__Tex
 <br>
 EFL developers can makes their own styles for entry using EDC, including Evas Textblock style, visual style, cursor, handler and so on.<br>
 But, usually, Edje Entry is not used independently. It works as a part of Elementary Entry.
-
 
 ## Elementary Entry (Widget)
