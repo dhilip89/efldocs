@@ -37,6 +37,15 @@ For all formattings that textblock offers, please consult the [Textblock Style P
 ## (Optional) Unicode
 
 ## Textblock Logic
+When a text is set to Textblock, Textblock will save the text data. But, Textblock can't show directly the raw text. For handling complex texts, Textblock will makes logical and visual datas with the text and Textblock style.
+
+Firstly, when the text is set to Textblock, the text will be processed to nodes. Textblock will makes text nodes for normal text, makes format nodes for markup tags. Normally, each paragraph has one text node. In other words, only the markup tags that make a new paragraph can split the text nodes. Format nodes are made for each markup tags, which are wrapped with "<", ">".
+
+After setting a text to the Textblock, Textblock will relayout according to new format or new text. In this time, Textblock makes Items that would be used for layouting using Nodes.
+Text Item will be added when some text has different visual properties. In other words, Text Items are visually seperated. Format Item will be added when there is visible format. Visible format means markup tags that has their visual position. For example, "\<br/\>".
+
+These Items will be appended to a Line. And Lines makes a Paragraph.
+
 
 ## Evas Textblock
 
