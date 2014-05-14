@@ -45,7 +45,7 @@ Text Item will be added when some text has different visual properties. In other
 These Items will be appended to a Line. And Lines makes a Paragraph.
 
 ### Nodes
-When a user sets the textblock's markup using `evas_object_textblock_text_markup_set` (or `evas_object_textblock_text_markup_prepend`), the text is being parsed to create **Text Nodes** and **Format Nodes** from occurrences of plain text and tags, respectively. Nodes contain the minimal amount of information required, so that the heavy work of layouting can be performed on the rendering stages.
+When a user sets the textblock's markup using `evas_object_textblock_text_markup_set` (or `evas_object_textblock_text_markup_prepend`), the text is being parsed to create [Text Nodes](#nodes_text) and [Format Nodes](#nodes_format) from occurrences of plain text and tags, respectively. Nodes contain the minimal amount of information required, so that the heavy work of layouting can be performed on the rendering stages.
 
 Format nodes are assigned to text nodes, and each text node can have many format nodes assigned to it.
 The relation (pointers) between the two types is depicted in the following diagram:
@@ -53,10 +53,9 @@ The relation (pointers) between the two types is depicted in the following diagr
 
 Solid lines represent required pointers to make it work, dotted lines represent list pointers (for iteration) and dashed lines represent pointers for optimization.
 
-#### Text Nodes
+#### <a name="nodes_text"></a>Text Nodes
 
-
-#### Format Nodes
+#### <a name="nodes_format"></a>Format Nodes
 
 ### Items
 
