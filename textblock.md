@@ -1,6 +1,15 @@
 # Textblock
 
-## Introduction
+- [Textblock](#textblock)
+	- [Introduction](#introduction)
+	- [Textblock Logic](#textblock_logic)
+	- [Unicode](#unicode)
+	- [Bidi Properties](#bidi_properties)
+	- [Usages](#usages)
+	- [Edje Entry](#edje_entry)
+	- [Elementary Entry (Widget)](#elementary_entry)
+
+## <a name=introduction></a>Introduction
 This document serves as a complement to the existing [Textblock Documentation and Tutorial](http://docs.enlightenment.org/auto/efl/group__Evas__Object__Textblock.html#Evas_Object_Textblock_Tutorial "") in the official EFL documents.
 
 The Textblock object is an extensive tool for handling complex texts, such as ones that have multiple styles and multilined. More complex features offer text alignement, wrapping and item embedding e.g. icons.
@@ -34,7 +43,7 @@ Formatting can be achieved by either using the formatting functions, or by addin
 
 For all formattings that textblock offers, please consult the [Textblock Style Page](http://docs.enlightenment.org/auto/efl/evas_textblock_style_page.html).
 
-## Textblock Logic
+## <a name=textblock_logic></a>Textblock Logic
 When a text is set to Textblock, Textblock will save the text data. But, Textblock can't show directly the raw text. For handling complex texts, Textblock will makes logical and visual datas with the text and Textblock style.
 
 Firstly, when the text is set to Textblock, the text will be processed to nodes. Textblock will makes text nodes for normal text, makes format nodes for markup tags. Normally, each paragraph has one text node. In other words, only the markup tags that make a new paragraph can split the text nodes. Format nodes are made for each markup tags, which are wrapped with "<", ">".
@@ -66,13 +75,13 @@ Solid lines represent required pointers to make it work, dotted lines represent 
 
 #### Format Items
 
-## Unicode
+## <a name=unicode></a>Unicode
 
-## Bidi Properties
+## <a name=bidi_properties></a>Bidi Properties
 
-## Usages
+## <a name=usages></a>Usages
 
-## Edje Entry
+## <a name=edje_entry></a>Edje Entry
 Basically, [Edje Entry](http://docs.enlightenment.org/auto/edje/group__Edje__Text__Entry.html) is based in evas textblcok. It is supports many visual features for text input entry, which are not supported by evas textblock.
 - Text edit cursor
 - Cursor Handler
@@ -86,4 +95,4 @@ Basically, [Edje Entry](http://docs.enlightenment.org/auto/edje/group__Edje__Tex
 EFL developers can makes their own styles for entry using EDC, including Evas Textblock style, visual style, cursor, handler and so on.<br>
 But, usually, Edje Entry is not used independently. It works as a part of Elementary Entry.
 
-## Elementary Entry (Widget)
+## <a name=elementary_entry></a>Elementary Entry (Widget)
