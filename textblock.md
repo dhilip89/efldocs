@@ -35,7 +35,8 @@ The textblock object introduces a light [markup language](http://en.wikipedia.or
 ```c
 <font_weight=bold>Hello</font_weight> World
 ```
-will produce a |<b>Hello</b> World| text.
+will produce a [<b>Hello</b> World] text:<br>
+![example-tb-markup](https://eflisrael.github.io/efldocs/textblock/data/images/examples/example-markup-font-bold.png)<br>
 There are many more formatting options that Textblock offers.
 
 ### Formatting
