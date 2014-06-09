@@ -63,11 +63,20 @@ The relation (pointers) between the two types is depicted in the following diagr
 
 Solid lines represent required pointers to make it work, dotted lines represent list pointers (for iteration) and dashed lines represent pointers for optimization.
 
-#### <a name="nodes_text"></a>Text Nodes
+#### <a name="nodes_text"></a>Text Nodes [`Evas_Object_Textblock_Node_Text`]
+Text nodes hold information of the actual text. The text is being stripped-down of format tags, and stored as unicode data.
+The stripped format tags create format nodes with relevant information.
 
 #### <a name="nodes_format"></a>Format Nodes
+These represent the format instances determined by the style and the format tags in a text.
 
 ### Items
+Items are elements that describe how a paragraph is laid out. Their order in each line of a paragraph determins the visual placement of the text in the rendering stage.
+Each item is associated with a text node, as well as its offset in that node, so that multiple items may represent different sections of the same text node. Also, each are associated with a format.
+These also store geometrical properties such as sizes and positions.
+
+### Paragraph
+...
 
 ![example1](https://eflisrael.github.io/efldocs/textblock/data/diagrams/svg/tb-items-paragraphs-example.svg)
 (1) This is true if legacy newline support is turned off. Otherwise, a newline item creates a new paragraph.
