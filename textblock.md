@@ -70,20 +70,29 @@ The stripped format tags create format nodes with relevant information.
 #### <a name="nodes_format"></a>Format Nodes
 These represent the format instances determined by the style and the format tags in a text.
 
-### Items
-Items are elements that describe how a paragraph is laid out. Their order in each line of a paragraph determins the visual placement of the text in the rendering stage.
-Each item is associated with a text node, as well as its offset in that node, so that multiple items may represent different sections of the same text node. Also, each are associated with a format.
-These also store geometrical properties such as sizes and positions.
-
 ### Paragraph
-...
+Paragraphs are delimited by a Paragraph Separator (PS) format tag. Each Paragraph
+has lines, and each line describes the visual ordering of items.
+The paragraph objects holds a logical list of all of its items.
 
 ![example1](https://eflisrael.github.io/efldocs/textblock/data/diagrams/svg/tb-items-paragraphs-example.svg)
 (1) This is true if legacy newline support is turned off. Otherwise, a newline item creates a new paragraph.
 
+### Lines
+Lines are created by either having a Line Break format tag, or by a property of the
+paragraph, such as line-wrapping.
+Essentially, each line is a list of Textblock items.
+
+### Items
+Items are elements that describe how a line is laid out. Their order in each line of a paragraph determins the visual placement of the text in the rendering stage.
+Each item is associated with a text node, as well as its offset in that node, so that multiple items may represent different sections of the same text node. Each item is associated with a format node.
+There are two types of items: Text and Format. Each extend the Item object.
+
 #### Text Items
+Text items are essentially an extention to Evas Text Props.
 
 #### Format Items
+Format items are special formats that exist in the text itself. Text elememnts such as the paragraph separator, line break, tabs and "<item>" tags create format items. Tabs and "<item>" format items can actually take up space in the text.
 
 ## <a name=unicode></a>Unicode
 
