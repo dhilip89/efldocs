@@ -92,7 +92,7 @@ There are two types of items: Text and Format. Each extend the Item object.
 Text items are essentially an extention to Evas Text Props.
 
 #### Format Items
-Format items are special formats that exist in the text itself. Text elememnts such as the paragraph separator, line break, tabs and "<item>" tags create format items. Tabs and "<item>" format items can actually take up space in the text.
+Format items are special formats that exist in the text itself. Text elememnts such as the paragraph separator, line break, tabs and `<item>` tags create format items. Tabs and `<item>` format items can actually take up space in the text.
 
 ## <a name=unicode></a>Unicode
 
