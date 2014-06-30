@@ -2,12 +2,12 @@
 
 - [Textblock](#textblock)
 	- [Introduction](#introduction)
-	- [Textblock Logic](#textblock_logic)
-	- [Unicode](#unicode)
-	- [Bidi Properties](#bidi_properties)
-	- [Usages](#usages)
-	- [Edje Entry](#edje_entry)
-	- [Elementary Entry (Widget)](#elementary_entry)
+		- [Textblock Logic](#textblock_logic)
+		- [Unicode](#unicode)
+		- [Bidi Properties](#bidi_properties)
+		- [Usages](#usages)
+- [Edje Entry](#edje_entry)
+- [Elementary Entry (Widget)](#elementary_entry)
 
 ## <a name=introduction></a>Introduction
 This document serves as a complement to the existing [Textblock Documentation and Tutorial](http://docs.enlightenment.org/auto/efl/group__Evas__Object__Textblock.html#Evas_Object_Textblock_Tutorial "") in the official EFL documents.
@@ -100,7 +100,7 @@ Format items are special formats that exist in the text itself. Text elememnts s
 
 ## <a name=usages></a>Usages
 
-## <a name=edje_entry></a>Edje Entry
+# <a name=edje_entry></a>Edje Entry
 Basically, [Edje Entry](http://docs.enlightenment.org/auto/edje/group__Edje__Text__Entry.html) is based in evas textblcok. It is supports many visual features for text input entry, which are not supported by evas textblock.
 - Text edit cursor
 - Cursor Handler
@@ -114,4 +114,4 @@ Basically, [Edje Entry](http://docs.enlightenment.org/auto/edje/group__Edje__Tex
 EFL developers can makes their own styles for entry using EDC, including Evas Textblock style, visual style, cursor, handler and so on.<br>
 But, usually, Edje Entry is not used independently. It works as a part of Elementary Entry.
 
-## <a name=elementary_entry></a>Elementary Entry (Widget)
+# <a name=elementary_entry></a>Elementary Entry (Widget)
