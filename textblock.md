@@ -96,8 +96,8 @@ Format items are special formats that exist in the text itself. Text elememnts s
 
 ## <a name=layout_process></a>Layout Process
 Textblock's layouting is divided to two main stages:
-	- Creation of logical items as well as their paragraphs and lines (pre-layout)
-	- Individual visual handling of each paragraph for cases such as lines geometry, wrapping etc.
+  - Creation of logical items as well as their paragraphs and lines (pre-layout)
+  - Individual visual handling of each paragraph for cases such as lines geometry, wrapping etc.
 
 ### Pre-Layout
 At this stage all of the first-level information (that has been set by user functions), such as text and format nodes, is processed. Each text node produces a single paragraph. Logical textblock items are created and assigned to their respectful lines and paragraphs, after being set with actual formats that have been produced from the format nodes.
