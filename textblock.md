@@ -67,7 +67,7 @@ Solid lines represent required pointers to make it work, dotted lines represent 
 Text nodes hold information of the actual text. The text is being stripped-down of format tags, and stored as unicode data.
 The stripped format tags create format nodes with relevant information.
 
-#### <a name="nodes_format"></a>Format Nodes
+#### <a name="nodes_format"></a>Format Nodes [`Evas_Object_Textblock_Node_Format`]
 These represent the format instances determined by the style and the format tags in a text.
 
 ### Paragraph
