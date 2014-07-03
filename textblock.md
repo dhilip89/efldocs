@@ -89,7 +89,13 @@ Each item is associated with a text node, as well as its offset in that node, so
 There are two types of items: Text and Format. Each extend the Item object.
 
 #### Text Items
-Text items are essentially an extention to Evas Text Props.
+Text items are essentially an extension to Evas Text Props.
+
+##### Text Props
+The text props (=properties?) is the core text structure of Evas. It is used throughout all text-related Evas objects.
+Mainly, the text props consists of 1) an array of font glyphs 2) glyph information. Glyph information is retrieved by using libraries such as Freetype or Harfbuzz.
+Glyph information is being populated during the pre-layout stage, and font glyphs at the rendering stage.
+![text_props_dia](https://eflisrael.github.io/efldocs/textblock/data/diagrams/svg/tb-text-item-struct.svg)
 
 #### Format Items
 Format items are special formats that exist in the text itself. Text elememnts such as the paragraph separator, line break, tabs and `<item>` tags create format items. Tabs and `<item>` format items can actually take up space in the text.
