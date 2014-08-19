@@ -125,8 +125,7 @@ Textblock's layouting is divided to two main stages:
   - Individual visual handling of each paragraph for cases such as lines geometry, wrapping etc.
 
 ### Pre-Layout
-At this stage all of the first-level information (that has been set by user functions), such as text and format nodes, is processed. Each text node produces a single paragraph. Logical textblock items are created and assigned to their respectful lines and paragraphs, after being set with actual formats that have been produced from the format nodes.
-Also, font information is stored in the text items.
+At this stage all of the first-level information (that has been set by user functions), such as text and format nodes, is processed. Each text node produces a single paragraph. Logical textblock items are created and assigned to their respectful paragraphs. This after being set with actual formats, that have been produced from processing the format nodes.
 
 ### Visual Layout
 Most of the work here is to calculate geometries for all items, lines and paragraphs. All line wrapping and ellipsis is done here as well.
