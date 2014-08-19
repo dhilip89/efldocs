@@ -91,17 +91,30 @@ There are two types of items: Text and Format. Each extend the Item object.
 #### Text Items
 Text items are essentially an extension to Evas Text Props.
 
-##### Text Props
+###### Text Props
 The text props (=properties?) is the core text structure of Evas. It is used throughout all text-related Evas objects.
-Mainly, the text props consists of 1) an array of font glyphs 2) glyph information. Glyph information is retrieved by using libraries such as Freetype or Harfbuzz.
-Glyph information is being populated during the pre-layout stage, and font glyphs at the rendering stage.
+Mainly, the text props consists of:
+    - An array of glyphs
+    - An array of glyph information.
+    
+Glyph information is being populated during the pre-layout stage, and the glyphs themselves at the rendering stage.
+The information of each glyph, which is required to handle text properly, is as follows:
+    - Pen position after glyph
+    - x/y bearing
+    - Width
+    - Opentype Information:
+        - Cluster index
+        - x/y offset
+        
 ![text_props_dia](https://eflisrael.github.io/efldocs/textblock/data/diagrams/svg/tb-text-item-struct.svg)
 
-The Text_Props structure contains information for a whole paragraph. A text offset field allows the text items to be split for various reasons. One, examplified in the following diagram, is wrapping:
+The Text_Props structure contains information for a whole paragraph. Also, it can be shared among multiple text items, which had been created as a result of one text item being split, for various resons. One example for such a case is text wrapping, and is demonstrated in the following diagram:
 ![text_props_wrapping_dia1](https://eflisrael.github.io/efldocs/textblock/data/diagrams/svg/tb-textprops-wrapping01.svg)
-This is a representation of the relationship of one text item which corresponds to a textblock of one paragraph and one line. When there is a need to split that line (e.g. word-wrapping), the layout will change to the following:
+This is a rough example of how a single line of the "Hello World" text is linked to its text props. Note that the glyph information does not hold a character or a glyph, but only the information as described in the list above. The letters of each corresponding glyph informaion are placed in the diagram for the convenience of the reader.
+
+If the text happends to get wrapped, due to width restrictions of the textblock's window, then the line will be split. In this case, the wrapping is set to be a "word-wrap".
 ![text_props_wrapping_dia2](https://eflisrael.github.io/efldocs/textblock/data/diagrams/svg/tb-textprops-wrapping02.svg)
-Each Text Item has its own Text Props structure, but the latter share the core information such as pointers to glyph arrays. The example depicts how both Text_Props of different items correspond to different areas in the glyph array.
+As we can see, the single item has been split to three items. Each Text Item has its own Text Props structure, which corresponds to different ranges in the glyph information array. For example, the item of the word "World" is placed in the second line, but uses the same allocated space of the glyph information.
 
 #### Format Items
 Format items are special formats that exist in the text itself. Text elememnts such as the paragraph separator, line break, tabs and `<item>` tags create format items. Tabs and `<item>` format items can actually take up space in the text.
