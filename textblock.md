@@ -128,7 +128,8 @@ Textblock's layouting is divided to two main stages:
 At this stage all of the first-level information (that has been set by user functions), such as text and format nodes, is processed. Each text node produces a single paragraph. Logical textblock items are created and assigned to their respectful paragraphs. This after being set with actual formats, that have been produced from processing the format nodes.
 
 ### Visual Layout
-Most of the work here is to calculate geometries for all items, lines and paragraphs. All line wrapping and ellipsis is done here as well.
+This is where all the logical items are processed, to make the lines in each paragraph. 
+Geometries of all items, lines and paragraphs are calculated here. All line wrapping and ellipsis handling is done here as well. This stage results in what is called "The Formatted Layout".
 
 ## <a name=unicode></a>Unicode
 
