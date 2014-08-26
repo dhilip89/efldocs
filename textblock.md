@@ -131,6 +131,13 @@ At this stage all of the first-level information (that has been set by user func
 This is where all the logical items are processed, to make the lines in each paragraph. 
 Geometries of all items, lines and paragraphs are calculated here. All line wrapping and ellipsis handling is done here as well. This stage results in what is called "The Formatted Layout".
 
+## <a name=layout_process></a>Formatted vs. Native Size
+The width and the height values of the resulant layout are known as the "formatted size". It has the width that the user has set for the textblock object (using the `evas_object_size_set` function), and the the required height so that the whole text fits in it.
+On the other hand, we have the "native size" values. This can be thought of as the formatted size, but with its width already set to infinity.
+The difference between the two types of sizing is that text wrapping can *not* occur with the latter, as the width is big enough to fit the whole line of the original text. So, the formatted height >= native height.
+In actuality, the native size is calculated a bit differently: instead of running the layout process with an infinite width value, a different layouting mechanism is used. In this kind of layouting we skip wrapping handling. Lines are only created when meeting line or paragraph breaks. This makes the native size calculation a lot faster.
+
+
 ## <a name=unicode></a>Unicode
 
 ## <a name=bidi_properties></a>Bidi Properties
