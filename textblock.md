@@ -139,6 +139,9 @@ In actuality, the native size is calculated a bit differently: instead of runnin
 
 
 ## <a name=unicode></a>Unicode
+### References
+- UAX #29 - Text Segmentation http://www.unicode.org/reports/tr29/
+- UAX #9 - Bidirectional Algorithm http://www.unicode.org/reports/tr9/
 
 ## <a name=bidi_properties></a>Bidi Properties
 
