@@ -94,17 +94,17 @@ Text items are essentially an extension to Evas Text Props.
 ###### Text Props
 The text props (=properties?) is the core text structure of Evas. It is used throughout all text-related Evas objects.
 Mainly, the text props consists of:
-    - An array of glyphs
-    - An array of glyph information.
+  - An array of glyphs
+  - An array of glyph information.
     
 Glyph information is being populated during the pre-layout stage, and the glyphs themselves at the rendering stage.
 The information of each glyph, which is required to handle text properly, is as follows:
-    - Pen position after glyph
-    - x/y bearing
-    - Width
-    - Opentype Information:
-        - Cluster index
-        - x/y offset
+  - Pen position after glyph
+  - x/y bearing
+  - Width
+  - Opentype Information:
+      - Cluster index
+      - x/y offset
         
 ![text_props_dia](https://eflisrael.github.io/efldocs/textblock/data/diagrams/svg/tb-text-item-struct.svg)
 
