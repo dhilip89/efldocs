@@ -151,6 +151,27 @@ Evas Textblock is working in accordance with the Unicode Standards:
 
 ## <a name=usages></a>Usages
 
+# Textblock and Unicode
+In this section we will discuss a bit more on how the Evas Textblock supports and handles unicode text.
+We will not elaborate much on unicode here. If you are unfamiliar with the basics of unicode, it is advised to [have a read](http://en.wikipedia.org/wiki/Unicode) first.
+
+## Textblock's Logical Items and Font Runs
+We had a small example with text items, where it was shown a line with a single item is split due to line-wrapping. However, there are more cases where we would want to have more than one item in our text, to do the rendering job more efficiently.
+
+While in most text usages in the western world, you would've probably stick to latin-only characters, there are cases where you will need to use other type of [scripts](http://en.wikipedia.org/wiki/Script_%28Unicode%29). For instance, if you want to explain that the word "Hello" is "שלום" in Hebrew (an [RTL](http://en.wikipedia.org/wiki/Right-to-left) language), you would've written a text similar to this: "Helloשלום" (normally you would've at least add a whitespace between this couple of words).
+
+![unicode_text_mixed_scripts_visual](https://eflisrael.github.io/efldocs/textblock/data/diagrams/svg/helloshalom-visual.svg)
+
+The above image shows the expected order of characters on-screen. The order in which these characters are stored in memory is a bit different:
+
+![unicode_text_mixed_scripts_logical](https://eflisrael.github.io/efldocs/textblock/data/diagrams/svg/helloshalom-logical-order.svg)
+
+The first thing that comes to mind is: how do we determine in which order we display these characters? Textblock handles this by creating a separate item for each "run" in the text. In brief, a "run" is the biggest sequence of characters, starting at a given position, that ends (not including) at the first character of a different script than the one of the first character in the run.
+
+In this example, the runs are as followed:
+![unicode_text_mixed_scripts_runs](https://eflisrael.github.io/efldocs/textblock/data/diagrams/svg/helloshalom-runs.svg)
+
+
 # <a name=edje_entry></a>Edje Entry
 Basically, [Edje Entry](http://docs.enlightenment.org/auto/edje/group__Edje__Text__Entry.html) is based in evas textblcok. It is supports many visual features for text input entry, which are not supported by evas textblock.
 - Text edit cursor
