@@ -140,11 +140,12 @@ In actuality, the native size is calculated a bit differently: instead of runnin
 
 ## <a name=unicode></a>Unicode
 Evas Textblock is working in accordance with the Unicode Standards:
-- Word and line breaking (UAX #29) is supported via [libunibreak](https://github.com/adah1972/libunibreak).
+- Word (UAX #29) and line breaking (UAX #14) is supported via [libunibreak](https://github.com/adah1972/libunibreak).
 - Glyph shaping and information is retrieved using [harfbuzz](https://github.com/behdad/harfbuzz).
 
 ### References
 - UAX #29 - Text Segmentation http://www.unicode.org/reports/tr29/
+- UAX #14 - Line Breaking http://www.unicode.org/reports/tr14/
 - UAX #9 - Bidirectional Algorithm http://www.unicode.org/reports/tr9/
 
 ## <a name=bidi_properties></a>Bidi Properties
